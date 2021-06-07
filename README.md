@@ -9,13 +9,13 @@ Michael King
 
 Assuming you already have a conda installation such as Miniforge installed,
 
-'''
-conda create -n argopy
-conda activate argopy
-conda install xarray fsspec scikit-learn erddapy gsw aiohttp netCDF4 dask toolz
-conda install ipython ipywidgets tqdm Matplotlib Cartopy Seaborn
-conda install -c conda-forge argopy
-'''
+
+    conda create -n argopy
+    conda activate argopy
+    conda install xarray fsspec scikit-learn erddapy gsw aiohttp netCDF4 dask toolz
+    conda install ipython ipywidgets tqdm Matplotlib Cartopy Seaborn
+    conda install -c conda-forge argopy
+
 
 
 
