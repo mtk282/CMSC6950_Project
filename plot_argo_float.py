@@ -25,9 +25,9 @@ countries = gpd.read_file(gpd.datasets.get_path("naturalearth_lowres"))
 def main():
 
     # Start the plot - plot the trajectory of argo float
-    fig, ax = plt.subplots(nrows=2, ncols=2, figsize=(12,8))
+    fig, ax = plt.subplots(nrows=3, ncols=2, figsize=(16,12))
 
-    # Plot Canada on the map in [0,0]
+    # Plot Canada on the maps in [0,0] and [0,1]
 
     countries[countries["name"] == "Canada"].plot(ax=ax[0,0],color="black")
     countries[countries["name"] == "Canada"].plot(ax=ax[0,1],color="black")
