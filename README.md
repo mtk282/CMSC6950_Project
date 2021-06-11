@@ -18,7 +18,13 @@ Assuming you already have a conda installation such as Miniforge installed,
     conda install numpy pandas geopandas
     conda install -c conda-forge argopy
 
+## Using argopy
 
 
 
+## Computational Tasks
+
+Task 1 - Change in the total number of Argo floats for an area of interest within a certain time frame.
+
+Task 2 - Trajectory of an Argo float through time since its deployment
 
