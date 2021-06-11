@@ -1,4 +1,4 @@
-## Task 2 - Extract data from a single Argo float since its deployment
+## Task 2 - Extract data from two Argo floats since deployment
 
 #Python modules
 
@@ -11,9 +11,10 @@ import argopy
 from argopy import DataFetcher as ArgoDataFetcher
 argo_loader = ArgoDataFetcher()
 
-#Extract data from a Argo float # 6902754
+#Extract data from Argo floats 6902754 and 6902696
 
-ds = argo_loader.float(6902754).to_xarray()
+ds = argo_loader.float([6902754, 6902696]).to_xarray() 
+print(ds)
 
 #Create a pandas dataframe and export as a csv file
 
