@@ -26,5 +26,5 @@ Assuming you already have a conda installation such as Miniforge installed,
 
 Task 1 - Change in the total number of Argo floats for an area of interest within a certain time frame.
 
-Task 2 - Trajectory of an Argo float through time since its deployment
+Task 2 - Trajectory and temperature variation of two Argo floats through time since their deployment
 
