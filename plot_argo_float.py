@@ -1,4 +1,4 @@
-## Task 2 - Visualzing the trajectory of an Argo float with time
+## Task 2 - Visualzing the trajectory of two Argo float's with time
 
 #Import python libraries 
 
@@ -10,6 +10,11 @@ import geopandas as gpd
 #Import Argo float data from a csv file as data frame
 
 df = pd.read_csv('argopy_task2.csv', parse_dates=[15]) ##Load in csv file and identify date columns
+
+#Make two dataframes - one for each platform number
+
+df_6902754 = df[df.PLATFORM_NUMBER == 6902754]
+df_6902696 = df[df.PLATFORM_NUMBER == 6902696]
 
 #Dataframe from geopandas used to plot countries and continents
 
@@ -25,20 +30,39 @@ def main():
     # Plot Canada on the map in [0,0]
 
     countries[countries["name"] == "Canada"].plot(ax=ax[0,0],color="black")
+    countries[countries["name"] == "Canada"].plot(ax=ax[0,1],color="black")
 
-    # Make four plots with different position data sets recorded since 2017
+    # Plots showing the trajectories of two argo floats and temperature variation 
 
-    df.plot(ax=ax[0,0], x="LONGITUDE", y="LATITUDE", kind="scatter", c="CYCLE_NUMBER", colormap="viridis", s=1)
-    ax[0, 0].set_title("Argo Float Cycles since 2017 (Total # of Cycles = 131)")
+    df_6902754.plot(ax=ax[0,0], x="LONGITUDE", y="LATITUDE", kind="scatter", c="CYCLE_NUMBER", colormap="viridis", s=1, figsize=(16,16))
+    ax[0, 0].set_title("Argo 6902754 Cycles since deployment (Total # of Cycles = 131)")
 
-    df.plot(ax=ax[1,0], x="TIME", y="LATITUDE")
+    df_6902696.plot(ax=ax[0,1], x="LONGITUDE", y="LATITUDE", kind="scatter", c="CYCLE_NUMBER", colormap="viridis", s=1, figsize=(16,16))
+    ax[0, 1].set_title("Argo 6902696 since deployment (Total # of Cycles = 160)")
+
+    df_6902754.plot(ax=ax[1,0], x="TIME", y="LATITUDE")
+    df_6902696.plot(ax=ax[1,0], x="TIME", y="LATITUDE")
+    ax[1, 0].set(xlabel='Time', ylabel='Latitude')
     ax[1, 0].set_title("Latitude vs Time")
+    ax[1, 0].legend(["Argo 6902754", "Argo 6902696"])
 
-    df.plot(ax=ax[0,1], x="TIME", y="CYCLE_NUMBER")
-    ax[0, 1].set_title("Cycle Number vs Time")
+    df_6902754.plot(ax=ax[1,1], x="TIME", y="CYCLE_NUMBER")
+    df_6902696.plot(ax=ax[1,1], x="TIME", y="CYCLE_NUMBER")
+    ax[1, 1].set(xlabel='Time', ylabel='Cycle Number')
+    ax[1, 1].set_title("Cycle Number vs Time")
+    ax[1, 1].legend(["Argo 6902754", "Argo 6902696"])
 
-    df.plot(ax=ax[1,1], x="TIME", y="LONGITUDE")
-    ax[1, 1].set_title("Longitude vs Time")
+    df_6902754.plot(ax=ax[2,0], x="TIME", y="LONGITUDE")
+    df_6902696.plot(ax=ax[2,0], x="TIME", y="LONGITUDE")
+    ax[2, 0].set(xlabel='Time', ylabel='Longitude')
+    ax[2, 0].set_title("Longitude vs Time")
+    ax[2, 0].legend(["Argo 6902754", "Argo 6902696"])
+
+    df_6902754.plot(ax=ax[2,1], x="TIME", y="TEMP")
+    df_6902696.plot(ax=ax[2,1], x="TIME", y="TEMP")
+    ax[2, 1].set(xlabel='Time', ylabel='Temperature')
+    ax[2, 1].set_title("Temperature vs Time")
+    ax[2, 1].legend(["Argo 6902754", "Argo 6902696"])
 
 
     #Add grids and plot layout
@@ -46,7 +70,8 @@ def main():
     ax[1, 0].grid()
     ax[1, 1].grid()
     ax[0, 1].grid()
-
+    ax[2, 0].grid()
+    ax[2, 1].grid()
     fig.tight_layout()
     plt.savefig('argo_trajectory.png')
 
