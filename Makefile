@@ -1,5 +1,8 @@
-default: total_argo.png argo_trajectory.png
+default: total_argo.png argo_trajectory.png report.pdf
 .PHONY : default
+
+report.pdf: report.tex total_argo.png argo_trajectory.png
+	latexmk -pdf
 
 total_argo.png: plot_total_argo.py argopy_task1.csv
 	python3 plot_total_argo.py
