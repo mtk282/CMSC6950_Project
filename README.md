@@ -52,4 +52,4 @@ If installed properly, the ouput of the previous command should read:
 
 **Task 2** - Trajectory and temperature variation of two Argo floats through time since their deployment
 
-To run the computational tasks for my project, run the *make* in the command shell. This will produce all data, figures and project report. 
+To run the computational tasks for my project, run *make* in the command shell. This will produce all data, figures and project report. 
