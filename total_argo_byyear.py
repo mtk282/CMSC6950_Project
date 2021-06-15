@@ -1,4 +1,4 @@
-## Task 1 Continued - Seperate Argo float data into dataframes for each year
+## Task 1 Continued - Import argopy_task1.csv and seperate Argo float data into dataframes for each year
 
 #Import Python modules
 
@@ -22,9 +22,9 @@ df_2004 = df[df['TIME'].dt.year == 2004] ##Create a dataframe for data collected
 df_2005 = df[df['TIME'].dt.year == 2005] ##Create a dataframe for data collected in 2005
 df_2006 = df[df['TIME'].dt.year == 2006] ##Create a dataframe for data collected in 2006
 
-##Calcuate the total number of argo floats each year
+##Calcuate the total number of argo floats each year by appending dataframes
 
-d1 = df_2001.append(df_2002) #Sequentially append dataframes together
+d1 = df_2001.append(df_2002) #2001-2002
 d2 = d1.append(df_2003) # 2001-2003
 d3 = d2.append(df_2004) # 2001-2004
 d4 = d3.append(df_2005) # 2001-2005
