@@ -2,13 +2,13 @@
 
 Course project for CMSC 6950
 
-Michael King
+**Michael King**
 
 Project title: argopy (https://argopy.readthedocs.io/en/latest/index.html)
 
 ## Software Setup
 
-Assuming you already have a conda installation such as Miniforge installed, create a new conda environemnt using:
+Assuming you already have a conda installation such as Miniforge installed, create a new conda environment using:
 
 
     conda create -n argopy
@@ -32,24 +32,32 @@ Finally, to install argopy, use the command:
 
 ## Using argopy
 
-argopy is a Python library that is used to access, manipulate and visualize Argo float data. To ensure that argopy is insatlled properly, run the command:
+argopy is a Python library that is used to access, manipulate and visualize Argo float data. To ensure that argopy is installed properly, run the command:
 
     import argopy
     from argopy import DataFetcher as ArgoDataFetcher
     argo_loader = ArgoDataFetcher()
     argo_loader
 
-If installed properly, the ouput of the previous command should read:
+If installed properly, the ouput of the previous Python command should read:
 
     <datafetcher> 'Not initialised'
     Current backend: erddap
     Available fetchers: profile, float, region
     User mode: standard
 
+For exmaples on data fetching, data manipulation and visualization, please read the argopy documentation at:
+
+https://argopy.readthedocs.io/en/latest/index.html
+
 ## Computational Tasks
 
 **Task 1** - Change in the total number of Argo floats for an area of interest within a certain time frame.
 
-**Task 2** - Trajectory and temperature variation of two Argo floats through time since their deployment
+![Task 1](total_argo.png)
 
-To run the computational tasks for my project, run *make* in the command shell. This will produce all data, figures and project report. 
+**Task 2** - Trajectory and temperature variation of two Argo floats through time since their deployment.
+
+![Task 2](argo_trajectory.png)
+
+To run the computational tasks for my project, run `make` in the command shell. This will produce all data, figures and my project report. To remove all csv and png files afer running `make`, run `make clean` in the command shell. To remove all pdf documents, run `make deepclean` in the command shell.
