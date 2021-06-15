@@ -1,10 +1,9 @@
-## Task 1 - Extracting data of total argo floats in a specific region over time
+## Task 1 - Extracting argo float data in a specific region over time
 
 #Import Python modules
 
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 import argopy
 
 ##Import argo data loader
@@ -12,7 +11,7 @@ import argopy
 from argopy import DataFetcher as ArgoDataFetcher
 argo_loader = ArgoDataFetcher()
 
-#Load the data into an array
+#Load Argo data from a specific region and over a certain time frame into an x.array.Dataset
 
 ds = argo_loader.region([-75, -45, 20, 30, 0, 10, '2001-01-01', '2006-12-31']).to_xarray()
 
