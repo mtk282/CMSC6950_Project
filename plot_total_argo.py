@@ -16,7 +16,7 @@ df_2004 = pd.read_csv('total_argo_2004.csv', parse_dates=[15])
 df_2005 = pd.read_csv('total_argo_2005.csv', parse_dates=[15])
 df_2006 = pd.read_csv('total_argo_2006.csv', parse_dates=[15])
 
-#Use geopandas to import shapefiles to be used in the subsequent plot
+#Use geopandas to import shapefiles of countries and continents to be used in the subsequent plot
 
 countries = gpd.read_file(gpd.datasets.get_path("naturalearth_lowres"))  #Read a datafile from geopandas with country b>
 
@@ -25,11 +25,11 @@ countries = gpd.read_file(gpd.datasets.get_path("naturalearth_lowres"))  #Read a
 
 def main():
 
-    # Start the plot
+    # Define subplots layout
 
     fig, ax = plt.subplots(nrows=3, ncols=2, figsize=(15,15))
 
-    # Plot North America on each plot
+    # Plot North America shapefile obtained from geopandas on each plot
 
     countries[countries["continent"] == "North America"].plot(ax=ax[0,0],color="black")
     countries[countries["continent"] == "North America"].plot(ax=ax[1,0],color="black")
