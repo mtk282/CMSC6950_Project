@@ -1,8 +1,8 @@
 default: report.pdf
 .PHONY : default
 
-report.pdf: report.tex total_argo.png argo_trajectory.png
-	pdflatex report.tex
+report.pdf: report.tex total_argo.png argo_trajectory.png refs.bib
+	latexmk -pdf
 
 total_argo.png: plot_total_argo.py total_argo_2001.csv total_argo_2002.csv total_argo_2003.csv total_argo_2004.csv total_argo_2005.csv total_argo_2006.csv
 	python3 plot_total_argo.py
