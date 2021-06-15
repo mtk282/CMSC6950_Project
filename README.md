@@ -18,7 +18,7 @@ The required Python dependencies for argopy can be installed using:
 
     conda install xarray fsspec scikit-learn erddapy gsw aiohttp netCDF4 dask toolz
 
-I also recommend installing the optional dependencies for full argopy fucntionality using:
+I also recommend installing the optional dependencies for full argopy functionality using:
 
     conda install ipython ipywidgets tqdm matplotlib cartopy seaborn
 
@@ -32,7 +32,7 @@ Finally, to install argopy, use the command:
 
 ## Using argopy
 
-argopy is a Python library that is used to access, manipulate and visualize Argo float data. To ensure that argopy is installed properly, run the command:
+argopy is a Python library that is used to access, manipulate and visualize Argo float data. To ensure that argopy is installed properly, run this command in a Pyhton terminal of choice:
 
     import argopy
     from argopy import DataFetcher as ArgoDataFetcher
@@ -46,7 +46,7 @@ If installed properly, the ouput of the previous Python command should read:
     Available fetchers: profile, float, region
     User mode: standard
 
-For exmaples on data fetching, data manipulation and visualization, please read the argopy documentation at:
+For examples on data fetching, data manipulation and visualization, please read the argopy documentation at:
 
 https://argopy.readthedocs.io/en/latest/index.html
 
