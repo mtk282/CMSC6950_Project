@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 import argopy
 
-#Argo data loader
+# Define Argo data loader used to load Argo data
 
 from argopy import DataFetcher as ArgoDataFetcher
 argo_loader = ArgoDataFetcher()
