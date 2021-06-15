@@ -1,4 +1,4 @@
-default: total_argo.png argo_trajectory.png report.pdf
+default: report.pdf
 .PHONY : default
 
 report.pdf: report.tex total_argo.png argo_trajectory.png
