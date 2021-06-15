@@ -7,24 +7,19 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import geopandas as gpd
 
-#Import Argo float data from a csv file as data frame
+#Import data from each Argo float as data frame
 
-df = pd.read_csv('argopy_task2.csv', parse_dates=[15]) ##Load in csv file and identify date columns
+df_6902754 = pd.read_csv('argo_6902754.csv', parse_dates=[15]) ##Load in csv file and identify date columns
+df_6902696 = pd.read_csv('argo_6902696.csv', parse_dates=[15]) ##Load in csv file and identify date columns
 
-#Make two dataframes - one for each platform number
-
-df_6902754 = df[df.PLATFORM_NUMBER == 6902754]
-df_6902696 = df[df.PLATFORM_NUMBER == 6902696]
-
-#Dataframe from geopandas used to plot countries and continents
+#Dataframe from geopandas containing shapefiles used to plot countries and continents
 
 countries = gpd.read_file(gpd.datasets.get_path("naturalearth_lowres"))
 
-#Plot the trajectory of an Argo float
+#Plot the trajectory of two Argo floats
 
 def main():
 
-    # Start the plot - plot the trajectory of argo float
     fig, ax = plt.subplots(nrows=3, ncols=2, figsize=(16,12))
 
     # Plot Canada on the maps in [0,0] and [0,1]
